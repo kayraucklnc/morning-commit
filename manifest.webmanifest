@@ -1,0 +1,17 @@
+{
+  "name": "The Morning Commit",
+  "short_name": "Morning Commit",
+  "description": "A daily newspaper of what builders were playing with on X, GitHub and Hacker News.",
+  "id": "/morning-commit/",
+  "start_url": "/morning-commit/",
+  "scope": "/morning-commit/",
+  "display": "standalone",
+  "background_color": "#f6f1e6",
+  "theme_color": "#141414",
+  "categories": ["news", "developer"],
+  "icons": [
+    { "src": "assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
