@@ -90,7 +90,8 @@ HEAD = """<!--mc:head-->
 <meta name="apple-mobile-web-app-title" content="Morning Commit">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{lead}">
-{ogimg}<script defer src="{r}assets/app.js"></script>
+{ogimg}<script>if(matchMedia("(max-width:760px)").matches)document.documentElement.classList.add("mc-phone");</script>
+<script defer src="{r}assets/app.js?v={v}"></script>
 <!--/mc:head-->"""
 
 def navbar(items, i, r):
@@ -102,7 +103,7 @@ def navbar(items, i, r):
     bot = f'<!--mc:foot--><div class="mcfoot">{o.replace("rel=", "data-r=")}<a href="{r}archive/">All editions</a>{n.replace("rel=", "data-r=")}</div><!--/mc:foot-->'
     return top, bot
 
-def inject(page, head, top, bot):
+def inject(page, head, top, bot, v="0"):
     page = re.sub(r"<!--mc:head-->.*?<!--/mc:head-->\n?", "", page, flags=re.S)
     page = re.sub(r"<!--mc:nav-->.*?<!--/mc:nav-->", "", page, flags=re.S)
     page = re.sub(r"<!--mc:foot-->.*?<!--/mc:foot-->", "", page, flags=re.S)
@@ -110,17 +111,27 @@ def inject(page, head, top, bot):
     page = page.replace("</head>", head + "\n</head>", 1)
     page = re.sub(r"(<body[^>]*>)", lambda m: m.group(1) + top, page, count=1)
     page = page.replace("</body>", bot + "</body>", 1)
+    return bust(page, v)
+
+def bust(page, v):
+    page = re.sub(r'(assets/style\.css)(\?[^"\']*)?', rf'\1?v={v}', page)
+    page = re.sub(r'(assets/app\.js)(\?[^"\']*)?', rf'\1?v={v}', page)
+    if 'name="mc:built"' in page:
+        page = re.sub(r'<meta name="mc:built" content="[^"]*">', f'<meta name="mc:built" content="{v}">', page)
+    else:
+        page = page.replace("</head>", f'<meta name="mc:built" content="{v}">\n</head>', 1)
     return page
 
 def rebuild():
     items = load(); save(items); items = load()
+    ts = str(int(time.time()))
     for i, it in enumerate(items):
         f = ROOT / it["path"] / "index.html"
         r = "../../"
         og = f'<meta property="og:image" content="{E(SITE + it["thumb"])}">\n' if it.get("thumb") else ""
-        head = HEAD.format(r=r, title=E(it["title"]), lead=E(it.get("lead") or ""), ogimg=og)
+        head = HEAD.format(r=r, title=E(it["title"]), lead=E(it.get("lead") or ""), ogimg=og, v=ts)
         top, bot = navbar(items, i, r)
-        f.write_text(inject(f.read_text(), head, top, bot))
+        f.write_text(inject(f.read_text(), head, top, bot, ts))
     # home page = latest edition rendered in place; <base> makes its relative paths resolve
     if items:
         latest = items[0]
@@ -145,14 +156,14 @@ def write_archive(items):
 <title>Archive · The Morning Commit</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@500;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/style.css">
-{HEAD.format(r="../", title="Archive · The Morning Commit", lead="Every past edition of The Morning Commit", ogimg="")}
+{HEAD.format(r="../", title="Archive · The Morning Commit", lead="Every past edition of The Morning Commit", ogimg="", v=str(int(time.time())))}
 </head><body><nav class="mcnav"><div class="in"><a class="home" href="../">The Morning Commit</a><div class="pn"><a href="../">Latest</a></div></div></nav>
 <div class="paper arch"><header class="mast"><h1>The Archive</h1><div class="tag">Every edition of The Morning Commit, newest first · {len(items)} so far</div></header>
 <ul class="alist">
 {body}
 </ul></div></body></html>'''
     (ROOT / "archive").mkdir(exist_ok=True)
-    (ROOT / "archive" / "index.html").write_text(page)
+    (ROOT / "archive" / "index.html").write_text(bust(page, str(int(time.time()))))
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser(); sp = ap.add_subparsers(dest="cmd", required=True)

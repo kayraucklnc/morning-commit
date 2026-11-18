@@ -2,10 +2,10 @@
 // - Shell is precached on install.
 // - Pages (navigations) and editions.json: network-first, fall back to cache (so new editions appear).
 // - Same-origin images/CSS/JS and Google Fonts: stale-while-revalidate (visited editions work offline).
-const VERSION = 'mc-1794984620';
+const VERSION = 'mc-1794995756';
 const SHELL = ['./', './archive/', './editions.json', './assets/style.css', './assets/app.js',
   './manifest.webmanifest', './assets/icons/icon-192.png', './assets/icons/icon-512.png'];
-const PAGES = 'mc-pages', ASSETS = 'mc-assets';
+const PAGES = 'mc-pages-' + VERSION, ASSETS = 'mc-assets-' + VERSION;
 
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(PAGES).then((c) => c.addAll(SHELL.map((u) => new Request(u, { cache: 'reload' })))).then(() => self.skipWaiting()));
