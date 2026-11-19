@@ -1,5 +1,13 @@
 [
   {
+    "date": "2026-11-19",
+    "title": "The Morning Commit · Thursday, November 19, 2026",
+    "lead": "nginx2root: the web server behind a huge chunk of the internet had a no-login remote takeover bug",
+    "deck": "Several research teams independently found memory bugs in NGINX's HTTP/2 code that let a stranger run code on the server. One works on a plain static-file setup. Patched releases came out yesterday.",
+    "thumb": "editions/2026-11-19/img/_thumb.webp",
+    "path": "editions/2026-11-19/"
+  },
+  {
     "date": "2026-11-18",
     "title": "The Morning Commit · Wednesday, November 18, 2026",
     "lead": "HUMAN.md: a designer's weird, funny scrolling manifesto became the website everyone argued about",
