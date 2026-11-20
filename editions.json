@@ -1,5 +1,13 @@
 [
   {
+    "date": "2026-11-20",
+    "title": "The Morning Commit · Friday, November 20, 2026",
+    "lead": "Someone put a tiny ChatGPT-style AI on a real Super Nintendo, and you can chat with it in your browser",
+    "deck": "Tech journalist Benj Edwards had AI agents build an unofficial “ChatGPT for SNES”: a 2.2-million-parameter model that runs on the Doom-era Super FX 2 chip and types its answers one word at a time. It's often wrong, and that's half the fun.",
+    "thumb": "editions/2026-11-20/img/_thumb.webp",
+    "path": "editions/2026-11-20/"
+  },
+  {
     "date": "2026-11-19",
     "title": "The Morning Commit · Thursday, November 19, 2026",
     "lead": "nginx2root: the web server behind a huge chunk of the internet had a no-login remote takeover bug",
