@@ -1,5 +1,13 @@
 [
   {
+    "date": "2026-11-21",
+    "title": "The Morning Commit · Saturday, November 21, 2026",
+    "lead": "A 26B open model that runs on a 16 GB laptop is the new local-AI favourite: Inkling 2 Mini",
+    "deck": "Thinking Machines, the lab started by ex-OpenAI CTO Mira Murati, released Inkling 2 Mini with open weights. It re-runs part of itself three times per token to “think” without writing more, and people are already running it on MacBooks and gaming PCs.",
+    "thumb": "editions/2026-11-21/img/_thumb.webp",
+    "path": "editions/2026-11-21/"
+  },
+  {
     "date": "2026-11-20",
     "title": "The Morning Commit · Friday, November 20, 2026",
     "lead": "Someone put a tiny ChatGPT-style AI on a real Super Nintendo, and you can chat with it in your browser",
