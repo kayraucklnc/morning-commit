@@ -1,5 +1,13 @@
 [
   {
+    "date": "2026-11-22",
+    "title": "The Morning Commit · Sunday, November 22, 2026",
+    "lead": "Drive a yellow cab through a sunset Manhattan, in your browser: mrdoob's Slop New York",
+    "deck": "Ricardo Cabello (mrdoob), who created three.js, keeps adding features to Slop New York: a WebGPU city you can drive, fly a camera through, and teleport around, from the Empire State Building to Manhattanhenge.",
+    "thumb": "editions/2026-11-22/img/_thumb.webp",
+    "path": "editions/2026-11-22/"
+  },
+  {
     "date": "2026-11-21",
     "title": "The Morning Commit · Saturday, November 21, 2026",
     "lead": "A 26B open model that runs on a 16 GB laptop is the new local-AI favourite: Inkling 2 Mini",
