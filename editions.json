@@ -1,5 +1,13 @@
 [
   {
+    "date": "2026-11-24",
+    "title": "The Morning Commit · Tuesday, November 24, 2026",
+    "lead": "Ladybird, the browser with a brand-new engine written from scratch, is out in alpha. Download it and try your favourite sites",
+    "deck": "Every browser you use today runs on one of three engines. Ladybird built a fourth, from the ground up, and you no longer have to compile it yourself: there's a Mac download and Linux packages, with automatic updates.",
+    "thumb": "editions/2026-11-24/img/_thumb.webp",
+    "path": "editions/2026-11-24/"
+  },
+  {
     "date": "2026-11-23",
     "title": "The Morning Commit · Monday, November 23, 2026",
     "lead": "NTSCRT: turn any video into a 1995 CD-ROM clip, a worn VHS tape or a glowing CRT, with a free open-source app",
