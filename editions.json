@@ -1,5 +1,13 @@
 [
   {
+    "date": "2026-11-25",
+    "title": "The Morning Commit · Wednesday, November 25, 2026",
+    "lead": "trynix.dev boots real Linux apps in a browser tab, even Firefox running inside Firefox. Open it and play",
+    "deck": "A Linux kernel compiled to WebAssembly now powers trynix.dev: pick almost any program Nix has ever packaged, and it boots in your browser with windows, OpenGL, sound and networking. No server runs your code; it all happens in the tab.",
+    "thumb": "editions/2026-11-25/img/_thumb.webp",
+    "path": "editions/2026-11-25/"
+  },
+  {
     "date": "2026-11-24",
     "title": "The Morning Commit · Tuesday, November 24, 2026",
     "lead": "Ladybird, the browser with a brand-new engine written from scratch, is out in alpha. Download it and try your favourite sites",
