@@ -1,5 +1,13 @@
 [
   {
+    "date": "2026-11-26",
+    "title": "The Morning Commit · Thursday, November 26, 2026",
+    "lead": "Karpathy had Claude turn real US data into a Civilization-style map you can browse in your browser. Open it and play",
+    "deck": "Andrej Karpathy asked Claude to populate a Civ-style game map with real public data: Census, BLS, NOAA, USGS, FAA and more, reconciled onto a 25 km hex grid with 19 lenses and a City View for 524 metros. Seven hours and 45K lines of code later, it's live at karpathy.ai/usaciv.",
+    "thumb": "editions/2026-11-26/img/_thumb.webp",
+    "path": "editions/2026-11-26/"
+  },
+  {
     "date": "2026-11-25",
     "title": "The Morning Commit · Wednesday, November 25, 2026",
     "lead": "trynix.dev boots real Linux apps in a browser tab, even Firefox running inside Firefox. Open it and play",
