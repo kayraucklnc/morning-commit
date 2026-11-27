@@ -1,5 +1,13 @@
 [
   {
+    "date": "2026-11-27",
+    "title": "The Morning Commit · Friday, November 27, 2026",
+    "lead": "SolidCraft: a free, open-source Fusion 360-style CAD app in Rust that runs in your browser, and lets your AI agent do the modeling",
+    "deck": "Sketch, constrain, extrude, fillet, and change one dimension to watch the whole part rebuild. SolidCraft runs as a desktop app, in a browser tab, as a CLI, and as an MCP server so Claude Code or other agents can design parts with you. Wes Bos called it a “clean room” port of Fusion 360 and is already printing gears from it.",
+    "thumb": "editions/2026-11-27/img/_thumb.webp",
+    "path": "editions/2026-11-27/"
+  },
+  {
     "date": "2026-11-26",
     "title": "The Morning Commit · Thursday, November 26, 2026",
     "lead": "Karpathy had Claude turn real US data into a Civilization-style map you can browse in your browser. Open it and play",
